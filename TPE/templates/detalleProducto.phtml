@@ -1,0 +1,59 @@
+<?php require './templates/header.phtml'; ?>
+
+<div class="card text-center w-50 mx-auto mt-5 mb-5">
+  <div class="row g-0">
+      <div class="card-body">
+        <h5 class="card-title"><?= $producto->nombre ?></h5>
+        <p class="card-text"><?= $producto->cantidad ?></p>
+        <p class="card-text"><?= $producto->descripcion ?></p>
+          <div class="d-flex flex-row justify-content-center">
+            <p class="card-text">Precauciones: 
+              <?php if($producto->precauciones == 1):?> 
+              <p class="text-danger"> SI </p>
+              <?php else: ?>
+              <p class="text-success"> NO </p>
+              <?php endif ?> 
+              </p>
+          </div>
+        <p class="card-text"><?= $producto->nombreCat ?></p>
+        <button type="button" class="btn btn-lg btn-primary" disabled>$<?= $producto->precio ?></button>
+        <?php if(AuthHelper::esAdmin()): ?>
+          <a href="deleteProducto/<?=$producto->id_producto?>" type="button" class="btn btn-danger">Eliminar</a>
+        <?php endif ?>
+      </div>
+  </div>
+</div>
+
+<?php if(AuthHelper::esAdmin()): ?>
+  <form action="updateProducto" method="post" class="text-center w-50 mx-auto mt-5 mb-5">
+    <h3 class="text-secondary w-30 mx-auto text-center mt-5">Editar Producto</h3>
+    <input hidden name="id_producto" value="<?= $producto->id_producto ?>">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Nombre</label>
+      <input type="text" class="form-control text-center" id="formGroupExampleInput" name="nombre" value="<?= $producto->nombre ?>">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Cantidad</label>
+      <input type="text" class="form-control text-center" id="formGroupExampleInput2" name="cantidad" value="<?= $producto->cantidad ?>">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Descripcion</label>
+      <input type="text" class="form-control text-center" id="formGroupExampleInput2" name="descripcion" value="<?= $producto->descripcion ?>">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Precio</label>
+      <input type="number" class="form-control text-center" id="formGroupExampleInput2" name="precio" value="<?= $producto->precio ?>">
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Categoria</label>
+      <select name="categoria" class="form-select text-center" aria-label="Default select example"> 
+          <?php foreach($categorias as $categoria): ?>
+            <option value ="<?= $categoria->id_categoria?>"><?= $categoria->nombreCat ?></option>
+          <?php endforeach ?>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">Editar</button>
+  </form>
+<?php endif ?>
+
+<?php require './templates/footer.phtml'; ?>

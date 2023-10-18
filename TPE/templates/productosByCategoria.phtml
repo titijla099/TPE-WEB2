@@ -1,0 +1,11 @@
+<?php
+require_once './templates/header.phtml';
+?>
+
+<div class="list-group mt-5 ">
+    <?php foreach($productos as $producto): ?>
+        <a href="showDetalle/<?=$producto->id_producto?>" class="list-group-item list-group-item-action"><?= ($producto->nombre) ?></a>
+    <?php endforeach ?>
+</div>
+
+<?php require_once './templates/footer.phtml'?> 

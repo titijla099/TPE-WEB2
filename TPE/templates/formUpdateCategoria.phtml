@@ -1,0 +1,21 @@
+<?php 
+require_once './templates/header.phtml'
+?>
+
+<form class="text-center w-50 mx-auto mt-5 mb-5" action="updateCategoria/<?=$categoria->id_categoria?>" method="post">
+  <div>
+    <h2 class="w-30 mx-auto text-center mt-5 mb-5">Editar Categoria</h2>
+    <label for="formGroupExampleInput" class="form-label mb-2">Nombre</label>
+    <input type="text" class="form-control text-center mb-5" id="formGroupExampleInput" name="nombre" value="<?= $categoria->nombreCat ?>">
+    <label for="formGroupExampleInput" class="form-label mb-2">Precauciones</label>
+    <select name="precauciones" class="form-select text-center" aria-label="Default select example"> 
+        <option value="0"> No </option>
+        <option value="1"> Si </option>
+    </select>
+    </div>
+ <button type="submit" class="btn btn-secondary mt-2">Editar</button>
+</form>
+
+<?php 
+    require_once './templates/footer.phtml'
+?>

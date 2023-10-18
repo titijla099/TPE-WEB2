@@ -1,0 +1,26 @@
+<?php
+require_once './templates/header.phtml';
+?>
+
+<?php if(AuthHelper::esAdmin()): ?>
+    <div class="w-auto text-center">
+        <a href="formAddCategoria" class="btn btn-success btn-lg mb-3 mt-5" tabindex="-1" role="button" aria-disabled="true">Añadir Categoria</a>
+    </div>
+<?php endif ?>
+
+<?php foreach ($categorias as $categoria):  ?>
+    <div class="list-group d-flex flex-row">
+        <li class="list-group-item w-100 d-flex flex-row" >
+        <a href="showByCategoria/<?= $categoria->id_categoria ?>" class="list-group-item list-group-item-action"><?= $categoria->nombreCat?></a>
+            <div class="d-flex flex-row">
+                <?php if(AuthHelper::esAdmin()): ?>
+                <a class="btn btn-danger ml-auto" href="deleteCategoria/<?= $categoria->id_categoria ?>" role="button">Eliminar Categoria</a>
+                <a class="btn btn-secondary ml-auto" href="formUpdateCategoria/<?= $categoria->id_categoria ?>" role="button">Editar Categoria</a>
+                <?php endif ?>
+            </div>
+        
+        </li>
+    </div>
+    <?php endforeach ?>
+    
+<?php require_once './templates/footer.phtml'; ?>

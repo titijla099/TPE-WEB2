@@ -1,0 +1,113 @@
+/*HEADER*/
+
+header a{
+    text-decoration: none;
+    color: #ececec;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: #1c1c1c;
+    justify-content: space-between;
+    padding: 15px 40px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 100px;
+}
+
+
+.boton-menu{
+    font-size: 20px;
+    margin: 0 30px;
+}
+
+
+nav{
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content:right;
+    align-items: center;
+    height: 30px;
+    width: 50%;
+}
+
+
+/* HOME */ 
+
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: #ececec;
+    height: 90vh;
+    background: url("/img/fondoproductos.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.presentacion h1{
+    font-size: 50px;
+}
+
+/*BANNER*/
+
+.presentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: #ececec;
+    height: 90vh;
+    background-image: url('http://localhost/web2/TPE/img/fondoproductos.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.presentacion h1{
+    font-size: 50px;
+}
+
+
+/*FOOTER*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    padding: 15px;
+    background-color:#1c1c1c;
+    color: #ececec;
+}
+
+.izq-footer > a{
+    height: 15px;
+    margin: 0 10px;
+}
+
+.der-footer h4{
+    text-align: center;
+    font-size: 25px;
+    margin: 0%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ececec;
+}
+
+.der-footer p{
+    font-size: 15px;
+    text-align: center;
+    margin: 0%;
+    padding-top: 10px;
+}

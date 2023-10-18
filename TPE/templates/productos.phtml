@@ -1,0 +1,24 @@
+<?php
+require_once './templates/header.phtml';
+require_once './templates/banner.phtml';
+?>
+
+<h2 class="text-primary w-50 mx-auto text-center mt-5 mb-5">Conozca Nuestros Productos</h2>
+
+<div class="mx-auto text-center w-25 mb-2">
+    <a href="showCategorias" class="btn btn-primary btn-lg w-5 " tabindex="-1" role="button" aria-disabled="true">Ver Categorías</a>
+    <?php if(AuthHelper::esAdmin()): ?>
+    <a href="formAddProducto" class="btn btn-success btn-lg w-5" tabindex="-1" role="button" aria-disabled="true">Añadir Producto</a>
+    <?php endif ?>
+</div>
+
+<div class="row text-center justify-content-center">
+    <div class="list-group col-md-6 col-sm-8 col-xl-4 col-lg-5 text-center">
+        <?php foreach($productos as $producto): ?>
+        <a href="showDetalle/<?=$producto->id_producto?>" class="list-group-item list-group-item-action"><?= $producto->nombre ?></a>
+        <?php endforeach ?>
+    </div>
+</div>
+
+
+<?php require_once './templates/footer.phtml'?> 

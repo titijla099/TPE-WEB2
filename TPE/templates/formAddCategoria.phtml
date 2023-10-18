@@ -1,0 +1,21 @@
+<?php 
+require_once './templates/header.phtml'
+?>
+
+<form action="addCategoria" method="post" class="text-center w-50 mx-auto mt-5 mb-5">
+<h3 class="text-success w-30 mx-auto text-center mt-5">Agregar una Categoría</h3>
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Nombre</label>
+    <input type="text" class="form-control text-center" id="formGroupExampleInput" name="nombre" >
+    <label for="formGroupExampleInput" class="form-label">Precauciones</label>
+    <select name="precauciones" class="form-select text-center" aria-label="Default select example"> 
+        <option value="0"> No </option>
+        <option value="1"> Si </option>
+    </select>
+    </div>
+ <button type="submit" class="btn btn-success">Añadir</button>
+</form>
+
+<?php 
+    require_once './templates/footer.phtml'
+?>
