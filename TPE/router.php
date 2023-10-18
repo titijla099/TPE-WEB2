@@ -77,5 +77,8 @@ switch ($params[0]) {
     case 'logout':
         $authController->logout();
     break;
+    default:
+        $productoController->showProductos();
+        break;
     
 }
